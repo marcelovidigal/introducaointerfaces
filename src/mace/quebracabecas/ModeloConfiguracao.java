@@ -1,14 +1,15 @@
 package mace.quebracabecas;
 
-public class ConfiguracaoModelo {
+public class ModeloConfiguracao {
 	
 	private int[][] tabuleiro;
 	int numeroLinhas, numeroColunas;
 	
-	public ConfiguracaoModelo(int[][] tabuleiro) {
+	public ModeloConfiguracao(int[][] tabuleiro) {
 		
 		numeroLinhas = tabuleiro.length;
 		numeroColunas = tabuleiro[0].length;
+		
 		this.tabuleiro = new int[numeroLinhas][numeroColunas];
 		
 		for (int linha = 0; linha < numeroLinhas; linha++) {
@@ -43,13 +44,13 @@ public class ConfiguracaoModelo {
 		return configuracao;
 	}
 	
-	public boolean equals(ConfiguracaoModelo configuracaoModelo){
+	public boolean equals(ModeloConfiguracao modeloConfiguracao){
 		
 		boolean resultado = true;
 		
 		for (int linha = 0; linha < numeroLinhas; linha++) {
 			for (int coluna = 0; coluna < numeroColunas; coluna++) {
-				if (this.tabuleiro[linha][coluna] != configuracaoModelo.tabuleiro[linha][coluna]) {
+				if (this.tabuleiro[linha][coluna] != modeloConfiguracao.tabuleiro[linha][coluna]) {
 					resultado = false;
 				}
 			}

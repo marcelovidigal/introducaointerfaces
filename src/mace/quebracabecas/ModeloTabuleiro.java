@@ -1,14 +1,14 @@
 package mace.quebracabecas;
 
-public class TabuleiroModelo {
+public class ModeloTabuleiro {
 	
 	private int numeroLinhas, numeroColunas;
 	private int[][] tabuleiro;	// o tabuleiro como um vetor
 	private int[] linhaBloco;	// o numero da linha de cada bloco
 	private int[] colunaBloco;	// o numero da coluna de cada bloco
 	
-	public ConfiguracaoModelo getConfiguracaoAtual() {
-		return new ConfiguracaoModelo(tabuleiro);
+	public ModeloConfiguracao getConfiguracaoAtual() {
+		return new ModeloConfiguracao(tabuleiro);
 	}
 	
 	public int getNumeroColunas() {
@@ -19,7 +19,8 @@ public class TabuleiroModelo {
 		return numeroLinhas ;
 	}
 	
-	public TabuleiroModelo(int numeroLinhas, int numeroColunas) {
+	public ModeloTabuleiro(int numeroLinhas, int numeroColunas) {
+		
 		this.numeroLinhas = numeroLinhas;
 		this.numeroColunas = numeroColunas;
 		
@@ -43,16 +44,16 @@ public class TabuleiroModelo {
 			}
 		}
 		
-		// o bloco faltante esta na parte inferior a direita
+		// o bloco vazio esta na parte inferior a direita
 		tabuleiro[numeroLinhas - 1][numeroColunas - 1] = 0;
 		linhaBloco[0] = numeroLinhas - 1;
 		colunaBloco[0] = numeroColunas - 1;
 	}
 	
-	public boolean mover(MovimentoModelo movimentoModelo) {
+	public boolean mover(ModeloMovimento modeloMovimento) {
 		
-		int direcao = movimentoModelo.getDirecao();
-		int bloco = movimentoModelo.getNumeroBloco();
+		int direcao = modeloMovimento.getDirecao();
+		int bloco = modeloMovimento.getNumeroBloco();
 		int linha = linhaBloco[bloco];
 		int coluna = colunaBloco[bloco];
 		
@@ -100,7 +101,9 @@ public class TabuleiroModelo {
 			} else {
 				ok = false;
 			}
-		} return ok;
+		}
+		
+		return ok;
 	}
 	
 }

@@ -1,6 +1,6 @@
 package mace.quebracabecas;
 
-public class QuebraCabecasTeste {
+public class QuebraCabecaTeste {
 	
 	private static boolean passou;
 	
@@ -9,34 +9,34 @@ public class QuebraCabecasTeste {
 		passou = true;
 		
 		// gera um modelo e imprime como texto
-		TabuleiroModelo tabuleiroModelo = new TabuleiroModelo(4, 4);
-		ConfiguracaoModelo configuracaoAtual, configuracaoEsperada;
-		configuracaoAtual = tabuleiroModelo.getConfiguracaoAtual();
-		configuracaoEsperada = new ConfiguracaoModelo(new int[][] {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 0}});
+		ModeloTabuleiro modeloTabuleiro = new ModeloTabuleiro(4, 4);
+		ModeloConfiguracao configuracaoAtual, configuracaoEsperada;
+		configuracaoAtual = modeloTabuleiro.getConfiguracaoAtual();
+		configuracaoEsperada = new ModeloConfiguracao(new int[][] {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 0}});
 		verificar(configuracaoAtual, configuracaoEsperada);
 		
 		// realiza um movimento
 		System.out.println("Move bloco 15 a direita");
-		MovimentoModelo movimentoModelo1 = new MovimentoModelo(Constantes.DIRECAO_DIREITA, 15);
+		ModeloMovimento modeloMovimento1 = new ModeloMovimento(Constantes.DIRECAO_DIREITA, 15);
 		
-		if (!tabuleiroModelo.mover(movimentoModelo1)) {
+		if (!modeloTabuleiro.mover(modeloMovimento1)) {
 			System.out.println("Movimento ilegal!");
 		}
 		
-		configuracaoAtual = tabuleiroModelo.getConfiguracaoAtual();
-		configuracaoEsperada = new ConfiguracaoModelo(new int[][] {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 0, 15}});
+		configuracaoAtual = modeloTabuleiro.getConfiguracaoAtual();
+		configuracaoEsperada = new ModeloConfiguracao(new int[][] {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 0, 15}});
 		verificar(configuracaoAtual, configuracaoEsperada);
 		
 		// realiza outro movimento
 		System.out.println("Move bloco 5 para cima");
-		MovimentoModelo movimentoModelo2 = new MovimentoModelo(Constantes.DIRECAO_SUPERIOR, 5);
+		ModeloMovimento modeloMovimento2 = new ModeloMovimento(Constantes.DIRECAO_SUPERIOR, 5);
 		
-		if (!tabuleiroModelo.mover(movimentoModelo2)) {
+		if (!modeloTabuleiro.mover(modeloMovimento2)) {
 			System.out.println("Movimento ilegal!");
 		}
 		
-		configuracaoAtual = tabuleiroModelo.getConfiguracaoAtual();
-		configuracaoEsperada = new ConfiguracaoModelo(new int[][] {{1, 2, 3, 4}, {5, 6, 7,8 }, {9, 10, 11, 12}, {13, 14, 0, 15}});
+		configuracaoAtual = modeloTabuleiro.getConfiguracaoAtual();
+		configuracaoEsperada = new ModeloConfiguracao(new int[][] {{1, 2, 3, 4}, {5, 6, 7,8 }, {9, 10, 11, 12}, {13, 14, 0, 15}});
 		verificar(configuracaoAtual, configuracaoEsperada);
 		
 		// exibe o resultado dos testes
@@ -47,7 +47,7 @@ public class QuebraCabecasTeste {
 		}
 	}
 	
-	private static void verificar(ConfiguracaoModelo configuracao1, ConfiguracaoModelo configuracao2) {
+	private static void verificar(ModeloConfiguracao configuracao1, ModeloConfiguracao configuracao2) {
 		if (configuracao1.equals(configuracao2)) {
 			System.out.println("Configuracao ok:");
 			System.out.println(configuracao1.toString());

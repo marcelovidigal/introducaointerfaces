@@ -1,11 +1,11 @@
 package mace.quebracabecas;
 
-public class MovimentoModelo {
+public class ModeloMovimento {
 	
 	private int direcao;
 	private int numeroBloco;
 	
-	public MovimentoModelo(int direcao, int numeroBloco) {
+	public ModeloMovimento(int direcao, int numeroBloco) {
 		this.direcao = direcao;
 		this.numeroBloco = numeroBloco;
 	}
