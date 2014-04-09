@@ -35,7 +35,7 @@ public class PanelDirecao extends JPanel {
 		this.add(radioButtonParaCima);
 		this.add(radioButtonParaBaixo);
 		this.add(radioButtonParaEsquerda);
-		this.add(radioButtonParaBaixo);
+		this.add(radioButtonParaDireita);
 	}
 	
 	public int getDirecao() {
