@@ -1,32 +1,32 @@
 package mace.contadorgui;
 
-public class ContadorModeloTeste {
+public class TesteModeloContador {
 	
 	private static boolean passou = true;
 	
 	public static void main(String[] args) {
 		
-		ContadorModelo countadorModelo = new ContadorModelo();
+		ModeloContador modeloCountador = new ModeloContador();
 		
-		checarValor(0, countadorModelo.getValor());
-		countadorModelo.incrementar();
-		checarValor(1, countadorModelo.getValor());
-		countadorModelo.decrementar();
-		checarValor(0, countadorModelo.getValor());
+		checarValor(0, modeloCountador.getValor());
+		modeloCountador.incrementar();
+		checarValor(1, modeloCountador.getValor());
+		modeloCountador.decrementar();
+		checarValor(0, modeloCountador.getValor());
 		
 		for (int i = 0; i < 37; i++) {
-			countadorModelo.incrementar();
+			modeloCountador.incrementar();
 		}
 		
-		checarValor(37, countadorModelo.getValor());
+		checarValor(37, modeloCountador.getValor());
 		
 		for (int i = 0; i < 21; i++) {
-			countadorModelo.decrementar();
+			modeloCountador.decrementar();
 		}
 		
-		checarValor(16, countadorModelo.getValor());
-		countadorModelo.redefinir();
-		checarValor(0, countadorModelo.getValor());
+		checarValor(16, modeloCountador.getValor());
+		modeloCountador.redefinir();
+		checarValor(0, modeloCountador.getValor());
 		
 		if (passou) {
 			System.out.println("Passou no teste.");

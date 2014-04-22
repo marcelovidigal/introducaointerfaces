@@ -3,12 +3,12 @@ package mace.contadorgui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ContadorListener implements ActionListener {
+public class ListenerContador implements ActionListener {
 	
-	private ContadorPanel contadorPanel;
+	private PanelContador panelContador;
 	
-	public ContadorListener(ContadorPanel contadorPanel) {
-		this.contadorPanel = contadorPanel;
+	public ListenerContador(PanelContador panelContador) {
+		this.panelContador = panelContador;
 	}
 	
 	// esse metodo e chamado pelo sistema
@@ -19,9 +19,9 @@ public class ContadorListener implements ActionListener {
 		String actionCommand = evt.getActionCommand();
 		
 		if (actionCommand.equals("Incrementar")) {
-			contadorPanel.incrementar();
+			panelContador.incrementar();
 		} else if (actionCommand.equals("Decrementar")) {
-			contadorPanel.decrementar();
+			panelContador.decrementar();
 		} else {
 			System.out.println("ERRO: ActionCommand inesperado");	
 		}

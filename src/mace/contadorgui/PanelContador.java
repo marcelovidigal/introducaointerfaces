@@ -7,16 +7,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-public class ContadorPanel extends JPanel {
+public class PanelContador extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private ContadorModelo contador;
+	private ModeloContador contador;
 	private JLabel labelValor;
 	
-	public ContadorPanel() {
+	public PanelContador() {
 		
-		contador = new ContadorModelo();
+		contador = new ModeloContador();
 		
 		BorderLayout borderLayout = new BorderLayout();
 		this.setLayout(borderLayout);
@@ -30,9 +30,9 @@ public class ContadorPanel extends JPanel {
 		this.add(labelValor, BorderLayout.CENTER);
 		
 		// as proximas tres linhas irao ser usadas para incorporar o listener
-		ContadorListener contadorListener = new ContadorListener(this);
-		buttonIncrementar.addActionListener(contadorListener);
-		buttonDecrementar.addActionListener(contadorListener);
+		ListenerContador listenerContador = new ListenerContador(this);
+		buttonIncrementar.addActionListener(listenerContador);
+		buttonDecrementar.addActionListener(listenerContador);
 	}
 	
 	public void incrementar() {

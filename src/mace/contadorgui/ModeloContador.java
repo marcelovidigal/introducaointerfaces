@@ -1,11 +1,11 @@
 package mace.contadorgui;
 
-public class ContadorModelo {
+public class ModeloContador {
 	
 	private int valor;
 	
 	// o construtor inicializa o contador para 0
-	public ContadorModelo() {
+	public ModeloContador() {
 		valor = 0;
 	}
 	
